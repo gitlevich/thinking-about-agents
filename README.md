@@ -9,17 +9,17 @@ theirs.
 
 The series has three pieces:
 
-[[The first](1-why-your-agent-gets-captured.md)] names a failure mode. Agents spiral—planning loops that won't
+[The first](1-why-your-agent-gets-captured.md) names a failure mode. Agents spiral—planning loops that won't
 terminate, critics that elaborate forever, tool chains that keep firing. I call it capture. It happens when generation
 consumes the resources that would be needed to interrupt generation. I describe what capture feels like from inside, and
 sketch what an architecture with explicit modes, bandwidth, and a regulator might look like.
 
-[[The second](2-how-goals-precipitate.md)] asks where goals come from. Most architectures I’ve seen described take goals
+[The second](2-how-goals-precipitate.md) asks where goals come from. Most architectures I’ve seen described take goals
 as parameters. But in my own experience, sometimes goals precipitate from preferences. Preference pulls attention,
 attention collapses into pattern, pattern crystallizes into goal. I trace that sequence and suggest what emergence might
 require.
 
-[[The third](3-sigils.md)] introduces sigils. A sigil is a label on a door—opaque from outside, containing a world
+[The third](3-sigils.md) introduces sigils. A sigil is a label on a door—opaque from outside, containing a world
 inside. In this framing, memory isn't storage and retrieval. It's attention visiting regions of a structure that also
 holds the present. I describe why traversals stop at sigils, what it would mean to enter one, and what this might imply
 for agents handling deep context.
