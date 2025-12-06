@@ -4,7 +4,7 @@ The previous piece left goals as injected parameters. The agent receives a targe
 goal-gradient to distinguish productive traversal from capture. That's useful but incomplete. It doesn't explain where
 goals come from.
 
-Here's the continuation: goals aren't prior to attention. They precipitate from it.
+Here's the continuation: goals aren't always prior. Sometimes they precipitate from preferences.
 
 I haven't built large agent systems. This is phenomenological observation and architectural thinking, aimed at people
 who do build them.
@@ -20,7 +20,7 @@ By attending, I collapse. Each observation constrains subsequent observations to
 If I attend to the light on the bookshelf, the next moment of attention is shaped by that. I'm not scanning neutrally
 anymore. I'm rendering a pattern.
 
-The pattern isn't found. It's constituted by attentional continuity. I provide the substrate for it to persist.
+The pattern isn't found. It's constituted by attentional continuity. Attention provides the substrate for it to persist.
 
 After enough collapses, the pattern has momentum. It starts to look like something I'm pursuing. A goal. But that's
 retrospective framing. The picture I'm offering is: preference pulls attention, attention collapses possibilities,
@@ -64,13 +64,13 @@ because years of practice carved those gradients. You don't tell the expert what
 surface what matters.
 
 Building a domain expert agent, then, isn't about injecting the right goals. It's about shaping the preference
-landscape. Goals emerge when shaped attention meets specific material.
+landscape. Goals emerge when shaped preferences meet specific material.
 
 The objection: isn't this just exploration with extra steps? No. In typical exploration, the reward function is fixed
-and external. Here the "reward" is implicit in the attention field, then later made explicit as a goal. Exploration
+and external. Here the "reward" is implicit in the preference landscape, then later made explicit as a goal. Exploration
 searches state space to maximize some externally defined objective. Goal precipitation lets the objective itself emerge
-from the shape of attention over time. The agent ends up wanting something because it kept attending to it, and it kept
-attending because the topology made that region salient.
+from the shape of preferences over time. The agent ends up wanting something because it kept attending to it, and it
+kept attending because the topology made that region salient.
 
 Another objection: doesn't this just push the problem back to the preference landscape? Partially. But the preference
 landscape can be simpler than a fully specified goal. Preferences are local gradients: this region is more salient than
@@ -79,8 +79,8 @@ are what preferences become when the system runs long enough.
 
 In my own case, this is how most goals actually work. I didn't start with "become a photographer" and pursue it.
 Attention kept getting captured by light. Patterns accumulated. At some point the word "photographer" became a useful
-label for a goal that had already crystallized from years of preferential attention. The goal was downstream of the
-attention, not prior to it.
+label for a goal that had already crystallized from years of preferential attention. The goal was downstream of
+preference, not prior to it.
 
 The toy implementation from the previous post doesn't do this. It takes goals as parameters. A next version would add: a
 preference-weighted topology (already implicit in the gravity values), an observation phase before goal-injection,
