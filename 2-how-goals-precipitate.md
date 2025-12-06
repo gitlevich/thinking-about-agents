@@ -20,7 +20,7 @@ By attending, I collapse. Each observation constrains subsequent observations to
 If I attend to the light on the bookshelf, the next moment of attention is shaped by that. I'm not scanning neutrally
 anymore. I'm rendering a pattern.
 
-The pattern isn't found. It's constituted by attentional continuity. I provide the substrate for it to persist.
+The pattern isn't found. It's constituted by attentional continuity. Attention provides the substrate for it to persist.
 
 After enough collapses, the pattern has momentum. It starts to look like something I'm pursuing. A goal. But that's
 retrospective framing. The picture I'm offering is: preference pulls attention, attention collapses possibilities,
