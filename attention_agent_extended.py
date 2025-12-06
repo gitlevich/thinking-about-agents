@@ -1,8 +1,6 @@
 """
 Attention-Based Agent Architecture
 
-A DDD-informed model of attention, capture, and goal precipitation.
-
 Author: Vladimir Gitlevich
 Developed in conversation with Claude.
 """
