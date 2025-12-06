@@ -4,24 +4,25 @@ This is a series about agents. I don't build them. I watch myself think and desc
 
 I'm a software architect with thirty years of practice. I've spent time on domain modeling—finding the right
 abstractions before committing to code. That's the mode I'm in here. Not implementation, not empirical research. Just
-careful
-description of one mind's operation, aimed at people who might find it useful for building minds that aren't theirs.
+careful description of one mind's operation, aimed at people who might find it useful for building minds that aren't
+theirs.
 
 The series has three pieces:
 
-The first names a failure mode. Agents spiral—planning loops that won't terminate, critics that elaborate forever, tool
-chains that keep firing. I call it capture. It happens when generation consumes the resources that would be needed to
-interrupt generation. I describe what capture feels like from inside, and sketch what an architecture with explicit
-modes, bandwidth, and a regulator might look like.
+[[The first](1-why-your-agent-gets-captured.md)] names a failure mode. Agents spiral—planning loops that won't
+terminate, critics that elaborate forever, tool chains that keep firing. I call it capture. It happens when generation
+consumes the resources that would be needed to interrupt generation. I describe what capture feels like from inside, and
+sketch what an architecture with explicit modes, bandwidth, and a regulator might look like.
 
-The second asks where goals come from. Most architectures I’ve seen described take goals as parameters. But in my own
-experience, goals aren't prior to attention. They precipitate from it. Preference pulls attention, attention collapses
-into pattern, pattern crystallizes into goal. I trace that sequence and suggest what emergence might require.
+[[The second](2-how-goals-precipitate.md)] asks where goals come from. Most architectures I’ve seen described take goals
+as parameters. But in my own experience, sometimes goals precipitate from preferences. Preference pulls attention,
+attention collapses into pattern, pattern crystallizes into goal. I trace that sequence and suggest what emergence might
+require.
 
-The third introduces sigils. A sigil is a label on a door—opaque from outside, containing a world inside. In this
-framing, memory isn't storage and retrieval. It's attention visiting regions of a structure that also holds the present.
-I describe why traversals stop at sigils, what it would mean to enter one, and what this might imply for agents handling
-deep context.
+[[The third](3-sigils.md)] introduces sigils. A sigil is a label on a door—opaque from outside, containing a world
+inside. In this framing, memory isn't storage and retrieval. It's attention visiting regions of a structure that also
+holds the present. I describe why traversals stop at sigils, what it would mean to enter one, and what this might imply
+for agents handling deep context.
 
 Each piece includes toy code. The code isn't production architecture. It's a way of checking whether the descriptions
 are coherent enough to run. Theory predicts behavior; if the behavior matches, the description isn't empty.
@@ -51,7 +52,8 @@ python attention_agent_extended.py
 python goal_precipitation.py
 ```
 
-Each script prints a short trace of the agent’s behavior to stdout. The parameters and topologies are defined at the top of each file and are meant to be tweaked.
+Each script prints a short trace of the agent’s behavior to stdout. The parameters and topologies are defined at the top
+of each file and are meant to be tweaked.
 
 ---
 
