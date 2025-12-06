@@ -2,10 +2,10 @@
 
 This is a series about agents. I don't build them. I watch myself think and describe what I see.
 
-I'm a software architect with thirty years of practice. I've spent time on domain modeling—finding the right
-abstractions before committing to code. That's the mode I'm in here. Not implementation, not empirical research. Just
-careful description of one mind's operation, aimed at people who might find it useful for building minds that aren't
-theirs.
+I've been designing and writing software for about thirty years, mostly around domain modeling and architecture. I also
+shoot a lot of photographs and read across domains: physics, cognitive science, philosophy, people like Wolfram,
+Hoffman, Vervaeke, and others. Over time I kept seeing the same shapes in very different places: similar topologies,
+similar preferences, similar stories about attention. Agent Language is what precipitated from that.
 
 The series has these pieces:
 
@@ -52,13 +52,13 @@ are coherent enough to run. Theory predicts behavior; if the behavior matches, t
 ---
 
 
-I'm a late bilingual. Russian native, English acquired as an adult. This left me with visibility into my own
-tokenization—I can watch the conversion of experience into language as it happens. Most of what I describe comes from
-that visibility. It's a sample size of one. I don't know how far it generalizes.
+I'm a late bilingual. Russian native, English acquired as an adult. This left me with unusual visibility into my own
+tokenization—I can watch the conversion of experience into language. Most of what I describe comes from that
+visibility, plus years of bouncing between different domains and noticing the same structures repeat. It's a sample size
+of one. I don't know how far it generalizes.
 
 If you build agents and something here is useful, use it. If it's wrong, you'll find out faster than I will.
 
----
 
 ## Running the demos
 
@@ -84,5 +84,7 @@ of each file and are meant to be tweaked.
 
 ---
 
-*Vladimir Gitlevich is a software architect and founder of DDD-NYC. He lives in San Francisco. This series developed
-over months of conversations with ChatGPT and was drafted in one night with Claude Opus.*
+*Vladimir Gitlevich lives in San Francisco. He designs and writes software, does photography, and spends too much time
+thinking about attention and agents. This series developed over months of conversations with ChatGPT and was drafted in
+one night with Claude Opus.*
+---
