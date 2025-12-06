@@ -20,7 +20,7 @@ By attending, I collapse. Each observation constrains subsequent observations to
 If I attend to the light on the bookshelf, the next moment of attention is shaped by that. I'm not scanning neutrally
 anymore. I'm rendering a pattern.
 
-The pattern isn't found. It's constituted by attentional continuity. Attention provides the substrate for it to persist.
+The pattern isn't found. It's constituted by attentional continuity. I provide the substrate for it to persist.
 
 After enough collapses, the pattern has momentum. It starts to look like something I'm pursuing. A goal. But that's
 retrospective framing. The picture I'm offering is: preference pulls attention, attention collapses possibilities,
@@ -57,6 +57,14 @@ circumstances force a goal on you (deadline, crisis, someone else's demand), tha
 existing topology. It changes where attention falls. The imposed goal becomes an attractor, and preferences reorganize
 around it. Precipitation and imposition are symmetrical: preferences crystallize into goals, and goals dissolve into
 preferences.
+
+This reframes what it means to build a domain expert. Expertise isn't a list of goals. It's a shaped topology. A senior
+architect looks at a system and attention falls toward coupling problems, not because anyone specified that goal, but
+because years of practice carved those gradients. You don't tell the expert what to find. The expert's preferences
+surface what matters.
+
+Building a domain expert agent, then, isn't about injecting the right goals. It's about shaping the preference
+landscape. Goals emerge when shaped attention meets specific material.
 
 The objection: isn't this just exploration with extra steps? No. In typical exploration, the reward function is fixed
 and external. Here the "reward" is implicit in the attention field, then later made explicit as a goal. Exploration
