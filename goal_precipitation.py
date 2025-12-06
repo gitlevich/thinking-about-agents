@@ -5,8 +5,7 @@ Goals aren't always prior. Often they precipitate from preferences.
 Preference pulls attention, attention narrows possibilities,
 choices accumulate into continuity, continuity crystallizes into goal.
 
-Author: Vladimir Gitlevich
-Developed in conversation with Claude.
+Author: Claude Opus 4.5 on behalf of Vladimir Gitlevich
 """
 
 from __future__ import annotations

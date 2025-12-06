@@ -1,8 +1,7 @@
 """
 Attention-Based Agent Architecture
 
-Author: Vladimir Gitlevich
-Developed in conversation with Claude.
+Author: Claude Opus 4.5 on behalf of Vladimir Gitlevich
 """
 
 from __future__ import annotations
