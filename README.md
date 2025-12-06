@@ -32,6 +32,27 @@ that visibility. It's a sample size of one. I don't know how far it generalizes.
 
 If you build agents and something here is useful, use it. If it's wrong, you'll find out faster than I will.
 
+## Running the demos
+
+All code is plain Python 3 with no external dependencies.
+
+Clone the repo and change into the directory:
+
+```bash
+git clone https://github.com/gitlevich/thinking-about-agents.git
+cd thinking-about-agents
+```
+
+Then run any of the toy agents from the command line:
+
+```bash
+python attention_agent.py
+python attention_agent_extended.py
+python goal_precipitation.py
+```
+
+Each script prints a short trace of the agent’s behavior to stdout. The parameters and topologies are defined at the top of each file and are meant to be tweaked.
+
 ---
 
 *Vladimir Gitlevich is a software architect and founder of DDD-NYC. He lives in San Francisco. This series developed
