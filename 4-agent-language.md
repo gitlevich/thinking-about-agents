@@ -22,13 +22,18 @@ An observer is where observations register. An observer has no goal. It just liv
 observations as they update along its active contrasts. This is what I called observer mode earlier: present to the
 current frame without narrating it. High bandwidth, low cost. The sensorium flows through; nothing is being steered.
 
-An agent is an observer with a goal. A goal is a standing aim that persists across multiple observations: “describe the
-room,” “make dinner,” “fix the bug,” “don’t think about politics.” Once a goal is active, observations stop
-being neutral. Some observations move me toward the goal, some away, some sideways.
+An agent is an observer with preferences. Even before any explicit goal is named, some directions in contrast space feel
+like “more of this,” some like “less of that,” some like noise. That ordering is already there.
 
-Preference is how an agent orders its current observations under a goal. Given what I’m sensing right now, and given the
-goal that’s live, which possible next choice is better, which is worse, which can be ignored. Preference doesn’t have to
-be explicit. I can discover it by watching where attention actually goes.
+A goal in AL is a standing goal that persists across multiple observations: “describe the room,” “make dinner,” “fix the
+bug,” “don’t think about politics.” Often it precipitates out of repeated preference, but it can also be injected from
+the outside as an explicit goal. Once a goal is live, observations stop being neutral. Some observations move me toward
+it, some away, some sideways.
+
+Preference is how an agent orders its current observations, with or without an explicit goal. Given what I’m sensing
+right now, and given whatever goal is live (precipitated or injected), which possible next choice is better, which is
+worse, which can be ignored. Preference doesn’t have to be explicit. I can discover it by watching where attention
+actually goes.
 
 Attention in AL is a single concrete and limited resource that action and meta-action both draw on. Generating
 narratives, planning, tool calls, self-critique, even “just” staying present — they all cost attention. When enough
@@ -66,8 +71,9 @@ This brings AL back to architecture, for people who do build systems. If you tak
 mind, it points to a few structural ideas, all of which I’ve already hinted at, now with names.
 
 You’d separate observer and agent. There would be an explicit low-cost loop where observations register and contrasts
-update, but no choices are being made and no narrative is being generated. Agent mode would be entered when a goal is
-active, and exited either on completion or on capture detection.
+update, but no choices are being made and no narrative is being generated. Agent mode would be entered when some goal
+is live — whether injected or precipitated from the system’s own preferences — and exited either on completion or on
+capture detection.
 
 You’d track attention explicitly as something that both generation and meta-generation consume. The same 
 resource that fuels tool calls and long chains of thought would also fuel the regulator that can cut them.
