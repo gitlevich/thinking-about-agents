@@ -39,15 +39,15 @@ The transition between observer and agent matters. A change in the perceptual fi
 contrast — triggers a minimal agent: investigate the disturbance. Short trajectory that should complete and return to
 observer. But sometimes an edge in the investigation leads somewhere. Association triggers association. Generation
 begins. The bookcase pulled 2008, which pulled storage, which pulled the old apartment, which pulled the new one, which
-pulled the death. None of those steps felt like a choice. That was the topology expressing itself through the bandwidth
+pulled the death. None of those steps felt like a choice. That was the topology expressing itself through the attention
 it had.
 
-I use "bandwidth" as a single abstract resource standing in for attention, energy, and compute — distinct but usually
-moving together. Generation competes with everything else for this resource, including the meta-cognitive process that
+In this model, attention is a single abstract resource standing in for energy and compute — distinct but usually moving
+together. Generation competes with everything else for this resource, including the meta-cognitive process that
 could interrupt generation. Call it the regulator. The regulator monitors whether the current trajectory is productive
 and can cut the narrative to return to observer.
 
-But the regulator needs bandwidth to run.
+But the regulator needs attention to run.
 
 Heavy narrative starves it. The process that should interrupt capture gets outcompeted by the capture itself. Full
 capture means the regulator has nothing to execute with. You ride until convergence.
@@ -64,7 +64,7 @@ return to, no baseline that isn't narrative. For implementers: observer mode isn
 explicit low-cost loop that updates a world model and monitors for salient contrasts, with generation turned off. The
 agent is still running, just not producing tokens.
 
-If an agent architecture has no explicit bandwidth model, it treats generation as free. There's no representation of
+If an agent architecture has no explicit attention model, it treats generation as free. There's no representation of
 meta-cognition requiring resources that generation might exhaust.
 
 Without a contemplative observer state, ‘reflection’ is just more generation, with no capture detection: agents can't
@@ -74,17 +74,16 @@ And without self-awareness given by the regulator, self-monitoring can't hard-in
 
 Our language is missing important concepts. If we model them explicitly, we'd end up with an architecture:
 explicit modes with different resource profiles. Observer is default. Agent is entered deliberately and exited on
-trajectory completion or capture detection. Bandwidth is finite, depleted by
-generation, required for meta-cognition. Capture detection monitors for circular reasoning and goalless drift. The
-regulator can interrupt — not another voice in the generation, but a hard cut that clears context and forces return to
-observer. In code, I approximate these with cycles in the path, long goalless trajectories, and high-gravity terminal
-nodes.
+trajectory completion or capture detection. Attention is finite, depleted by generation, required for meta-cognition.
+Capture detection monitors for circular reasoning and goalless drift. The regulator can interrupt — not another voice in
+the generation, but a hard cut that clears context and forces return to observer. In code, I approximate these with
+cycles in the path, long goalless trajectories, and high-gravity terminal nodes.
 
 This leaves open the question of goals. The architecture above still takes goals as injected parameters. A further
 direction — not implemented here — would let goals precipitate from preference gradients through sustained attention.
 The agent would develop goals the way minds do: by noticing what attention is already drawn toward, then rendering
 continuity until the pattern crystallizes. That's a separate research program, on top of the architecture here.
 
-This [toy code](attention_agent.py) instantiates the mode/bandwidth/capture/regulation part of the model. An agent that
+This [toy code](attention_agent.py) instantiates the mode/attention/capture/regulation part of the model. An agent that
 can observe, generate, get captured, detect capture, and recover. It traverses the bookcase topology. The theory
 predicts the behavior.
