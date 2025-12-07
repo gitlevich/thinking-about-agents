@@ -3,10 +3,8 @@
 Earlier I talked about observer and agent modes, capture, goals, sigils. I kept using the word “frame” without unpacking
 it. This is the piece that does that.
 
-```text
-Disclaimer: I don’t build agent architectures. This is phenomenological description and architectural sketching, aimed at people who
-do.
-```
+> Disclaimer: I don’t build agent architectures. This is phenomenological description and architectural sketching, 
+> aimed at people who do.
 
 In Agent Language, a contrast is an axis in the agent’s space along which things can differ: light/dark, near/far,
 safe/dangerous, “this design” vs “that one.” What matters is that the agent can distinguish positions along it at its

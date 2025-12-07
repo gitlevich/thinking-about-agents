@@ -3,9 +3,7 @@
 So far I’ve mostly talked about a single agent: observer vs agent mode, capture, goals, sigils. This piece is about what
 happens when more than one agent is in play.
 
-```text
-Disclaimer: I don’t build multi-agent systems. This is still phenomenological description, aimed at people who do.
-```
+> Disclaimer: I don’t build multi-agent systems. This is still phenomenological description, aimed at people who do.
 
 In Agent Language, an agent is an observer with a goal and a preference over its current observations. Entanglement is
 what happens when two agents at the same scale share a goal long enough that each one’s observations begin to include

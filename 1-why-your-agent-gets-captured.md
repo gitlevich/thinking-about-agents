@@ -5,10 +5,8 @@ keeps firing long past usefulness. Do you add exit conditions? Tune prompts? Ins
 are mechanical solutions. They don't touch the failure mode because there's no language in which we can discuss what's
 happening.
 
-```text
-Disclaimer: I haven't built large agent systems myself. This is a phenomenological and architectural sketch, aimed at
-people who do.
-```
+> Disclaimer: I haven't built large agent systems myself. This is a phenomenological and architectural sketch, aimed at
+> people who do.
 
 Here's a model that comes from sustained observation of my own cognition and its failures, and from thinking about how
 the agents people build might share these failure modes.

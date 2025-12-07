@@ -13,9 +13,7 @@ months of
 structure inside. The apartment layout. Specific conversations. The light in the room. His hands. Each of those contains
 its own sigils, pointing further in.
 
-```text
-Disclaimer: I don't study or build agent architectures. This is phenomenological description, aimed at people who do.
-```
+> Disclaimer: I don't study or build agent architectures. This is phenomenological description, aimed at people who do.
 
 The key insight: at my scale, a sigil is fractally equivalent to the present moment. My father's death, properly
 attended to, has the same kind of depth of available structure as my experience right now in this room. Both are

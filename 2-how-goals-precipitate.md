@@ -7,10 +7,8 @@ goals come from.
 In my experience, goals aren’t always prior. Often they precipitate from preferences. Sometimes it goes the other way:
 goals are imposed and preferences re-shape around them. It’s the same structure seen at different moments.
 
-```text
-Disclaimer: I haven’t built large agent systems. This is phenomenological observation and architectural sketching,
-aimed at people who do.
-```
+> Disclaimer: I haven’t built large agent systems. This is phenomenological observation and architectural sketching,
+> aimed at people who do.
 
 Start with preference. Preference isn’t a list of things I want. It’s a property of the topology: the shape of how
 concepts connect for me, where gradients are steep, what pulls attention without effort. I don’t decide to prefer. I
