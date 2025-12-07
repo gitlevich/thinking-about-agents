@@ -84,7 +84,6 @@ of each file and are meant to be tweaked.
 
 ---
 
-*Vladimir Gitlevich lives in San Francisco. He designs and writes software, does photography, and spends too much time
+_Vladimir Gitlevich lives in San Francisco. He designs and writes software, does photography, and spends too much time
 thinking about attention and agents. This series developed over months of conversations with ChatGPT and was drafted in
-one night with Claude Opus.*
----
+one night with Claude Opus._
