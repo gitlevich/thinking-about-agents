@@ -92,7 +92,7 @@ class SafetyFirst(Sigil):
         d = frame.view(distance, 0.0)
 
         # default: fine to do nothing
-        if choice.label == WALK_ON.label:
+        if choice.label == "walk_on":
             score = 2.0
         else:
             score = 0.0
@@ -126,20 +126,20 @@ class SelfCare(Sigil):
         # simple scalar "strain"
         strain = 0.6 * a + 0.4 * o
 
-        if choice.label == WALK_ON.label:
+        if choice.label == "walk_on":
             score = 0.5 * strain  # the more strained, the more walk_on is attractive
         else:
             score = 0.0
 
-        if choice.label == SHOOT.label:
+        if choice.label == "shoot":
             # if energy is low and strain high, penalize shooting
-            if e < 4.0 < strain:
+            if e < 4.0 and strain > 4.0:
                 score -= 4.0
             # if energy high and strain low, small positive
             if e > 6.0 and strain < 3.0:
                 score += 1.0
 
-        if choice.label == CROSS_STREET.label:
+        if choice.label == "cross_street":
             # mild reset: good when strain is moderate
             if 3.0 <= strain <= 6.0:
                 score += 1.0
@@ -149,7 +149,7 @@ class SelfCare(Sigil):
     def learn(self, frame: Frame, choice: Choice) -> None:
         # toy adaptation: if we choose walk_on repeatedly at high strain,
         # lower future creative_hunger in state (as if giving up a bit).
-        if choice.label == WALK_ON.label:
+        if choice.label == "walk_on":
             a = frame.view(anxiety, 0.0)
             o = frame.view(overload, 0.0)
             if a + o > 8.0:
@@ -192,7 +192,7 @@ def run_scenario(label: str, frame: Frame) -> None:
     safety = SafetyFirst()
     care = SelfCare()
 
-    agent = Agent("me_on_the_streer").with_sigils(hunter, safety, care)
+    agent = Agent("street_me").with_sigils(hunter, safety, care)
     history = History(agent=agent)
 
     options = [SHOOT, WALK_ON, CROSS_STREET]
@@ -217,10 +217,10 @@ if __name__ == "__main__":
     base_kwargs = dict(
         light_val=8.0,
         crowd_val=3.0,
-        threat_val=6.0,  # feels a bit sketchy
-        subject_val=9.0,  # very interesting subject
-        distance_val=7.0,  # need to get quite close
-        hunger_val=8.0,  # really want an image
+        threat_val=6.0,      # feels a bit sketchy
+        subject_val=9.0,     # very interesting subject
+        distance_val=7.0,    # need to get quite close
+        hunger_val=8.0,      # really want an image
     )
 
     # Version 1: calm, resourced day.

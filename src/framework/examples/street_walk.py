@@ -1,13 +1,11 @@
-# src/framework/examples/street_walk.py
-
-from __future__ import annotations
+# street_camera.py (append or replace main)
 
 from dataclasses import dataclass
 from typing import List
 
-from framework.al import Agent, History, Frame, Regulator as BaseRegulator, Intervention
+from framework.al import Agent, History, Frame
 
-from framework.examples.street_camera import (
+from street_camera import (
     StreetHunter,
     SafetyFirst,
     SelfCare,
@@ -24,7 +22,6 @@ from framework.examples.street_camera import (
     WALK_ON,
     CROSS_STREET,
 )
-
 
 @dataclass
 class Spot:
@@ -61,33 +58,6 @@ def clamp01(x: float) -> float:
     return max(0.0, min(10.0, x))
 
 
-class StreetRegulator(BaseRegulator):
-    """
-    Higher-scale agent watching telemetry and intervening.
-
-    Uses:
-      - strain = 0.6 * anxiety + 0.4 * overload
-      - energy
-    """
-
-    def decide(self, telemetry: Frame) -> Intervention:
-        e = telemetry.view(energy, 5.0)
-        a = telemetry.view(anxiety, 0.0)
-        o = telemetry.view(overload, 0.0)
-
-        strain = 0.6 * a + 0.4 * o
-
-        # Hard stop: very strained or almost no energy.
-        if strain > 8.0 or e < 2.0:
-            return Intervention.ASK_HUMAN  # "go home / talk to human"
-
-        # Soften: getting strained or tired.
-        if strain > 6.0 or e < 3.0:
-            return Intervention.SHRINK_FRAME
-
-        return Intervention.CONTINUE
-
-
 def simulate_walk() -> None:
     # A simple path: quiet side street -> busy corner -> alley -> plaza -> bus stop -> golden light
     walk: List[Spot] = [
@@ -106,8 +76,6 @@ def simulate_walk() -> None:
     agent = Agent("street_me").with_sigils(hunter, safety, care)
     history = History(agent=agent)
 
-    regulator = StreetRegulator(name="street_regulator")
-
     # Initial proprioception
     energy_val = 7.0
     anxiety_val = 3.0
@@ -116,8 +84,7 @@ def simulate_walk() -> None:
 
     options = [SHOOT, WALK_ON, CROSS_STREET]
 
-    print("=== Long walk with regulator ===\n")
-    print(f"initial weights: hunter={hunter.weight:.2f}, safety={safety.weight:.2f}, care={care.weight:.2f}\n")
+    print("=== Long walk ===\n")
 
     for i, spot in enumerate(walk, start=1):
         frame = build_frame_for_step(
@@ -135,51 +102,38 @@ def simulate_walk() -> None:
             f"step {i}: {spot.name:20s} "
             f"-> {choice.label:11s} score={score:5.2f} "
             f"E={energy_val:4.1f} A={anxiety_val:4.1f} "
-            f"O={overload_val:4.1f} H={hunger_val:4.1f}  "
-            f"[weights: H={hunter.weight:.2f} S={safety.weight:.2f} C={care.weight:.2f}]"
+            f"O={overload_val:4.1f} H={hunger_val:4.1f}"
         )
 
         # crude proprioception dynamics for next step
         if choice.label == "shoot":
+            # satisfied but drained, maybe a bit more anxious in sketchy spots
             hunger_val -= 3.0
             energy_val -= 1.0 + 0.1 * spot.crowd_val
             anxiety_val += 0.3 * spot.threat_val
             overload_val += 0.2 * spot.crowd_val + 0.2 * spot.threat_val
         elif choice.label == "cross_street":
+            # small reset: move away, ease nervous system a bit
             hunger_val += 1.0
             energy_val -= 0.5
             anxiety_val -= 0.8
             overload_val -= 0.7
         else:  # walk_on
+            # desire accumulates if we keep passing interesting things
             hunger_val += 0.3 * spot.subject_val
             energy_val -= 0.3
             anxiety_val -= 0.3
             overload_val -= 0.2
 
+        # clamp to [0, 10]
         energy_val = clamp01(energy_val)
         anxiety_val = clamp01(anxiety_val)
         overload_val = clamp01(overload_val)
         hunger_val = clamp01(hunger_val)
 
-        # --- Regulator step: look at telemetry and maybe intervene ---
-        telemetry = Frame().see(energy, energy_val).see(anxiety, anxiety_val).see(overload, overload_val)
-        intervention = regulator.decide(telemetry)
-
-        if intervention == Intervention.SHRINK_FRAME:
-            # turn down hunter a bit, turn up self-care
-            hunter.weight = max(0.0, hunter.weight - 0.5)
-            care.weight += 0.5
-            print(f"  regulator: SHRINK_FRAME -> hunter={hunter.weight:.2f}, care={care.weight:.2f}")
-        elif intervention in (Intervention.ASK_HUMAN, Intervention.PAUSE, Intervention.RESET_SIGILS):
-            print(f"  regulator: {intervention.name} -> stopping walk")
-            break
-        # CONTINUE: do nothing
-
     print("\nFinal telemetry:")
-    print(
-        f"  energy={energy_val:.1f} anxiety={anxiety_val:.1f} "
-        f"overload={overload_val:.1f} hunger={hunger_val:.1f}"
-    )
+    print(f"  energy={energy_val:.1f} anxiety={anxiety_val:.1f} "
+          f"overload={overload_val:.1f} hunger={hunger_val:.1f}")
 
     print("\nNarrative (choices):", [c.choice.label for c in history.collapses])
 
