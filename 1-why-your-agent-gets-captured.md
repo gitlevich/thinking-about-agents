@@ -84,6 +84,6 @@ direction — not implemented here — would let goals precipitate from preferen
 The agent would develop goals the way minds do: by noticing what attention is already drawn toward, then rendering
 continuity until the pattern crystallizes. That's a separate research program, on top of the architecture here.
 
-This [toy code](src/for_posts/attention_agent.py) instantiates the mode/attention/capture/regulation part of the model. An agent that
+This [toy code](attention_agent.py) instantiates the mode/attention/capture/regulation part of the model. An agent that
 can observe, generate, get captured, detect capture, and recover. It traverses the bookcase topology. The theory
 predicts the behavior.

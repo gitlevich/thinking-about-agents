@@ -80,5 +80,5 @@ window bigger. You could keep lateral traversal cheap and local, and reserve the
 that actually matter. Pointers to full worlds that can be entered when needed, not summaries you drag around everywhere.
 
 I don’t know how to build that. What I do know is that my own cognition behaves as if something like sigils is already
-there. Naming them is a way to keep track of that structure. [This code](src/for_posts/attention_agent_extended.py) is a toy version
+there. Naming them is a way to keep track of that structure. [This code](attention_agent_extended.py) is a toy version
 of that idea, nothing more.
