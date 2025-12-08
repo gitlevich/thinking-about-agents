@@ -1,14 +1,14 @@
+# src/framework/al_llm.py
+
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict, is_dataclass
 from textwrap import dedent
 from typing import Any, Callable, Dict
 
-from al import Frame, Choice, Sigil
+from .al import Frame, Choice, Sigil
 
-
-# Signature of your model client: prompt -> raw JSON string.
 LlmCall = Callable[[str], str]
 
 
@@ -37,9 +37,19 @@ class LlmSigil(Sigil):
 
     def _build_prompt(self, frame: Frame, choice: Choice) -> str:
         frame_view: Dict[str, Any] = {c.name: v for c, v in frame.values.items()}
+
+        payload = choice.payload
+        if is_dataclass(payload):
+            payload_json: Any = asdict(payload)
+        elif isinstance(payload, (str, int, float, bool)) or payload is None:
+            payload_json = payload
+        else:
+            # last resort: string form
+            payload_json = repr(payload)
+
         choice_view: Dict[str, Any] = {
             "label": choice.label,
-            "payload": choice.payload,
+            "payload": payload_json,
         }
 
         user = {
@@ -54,13 +64,15 @@ class LlmSigil(Sigil):
             ),
         }
 
-        return dedent(f"""
-        SYSTEM:
-        {self.system_prompt}
+        return dedent(
+            f"""
+            SYSTEM:
+            {self.system_prompt}
 
-        USER:
-        {json.dumps(user, ensure_ascii=False, indent=2)}
-        """).strip()
+            USER:
+            {json.dumps(user, ensure_ascii=False, indent=2)}
+            """
+        ).strip()
 
     def score(self, frame: Frame, choice: Choice) -> float:
         prompt = self._build_prompt(frame, choice)
