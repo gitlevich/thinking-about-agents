@@ -27,7 +27,7 @@ traversals stop at sigils, what it would mean to enter one, and what this might 
 
 **[Agent Language](4-agent-language.md)**  
 Introduces Agent Language (AL). AL is a minimal first-person vocabulary for talking about agents, their experience, and
-their choices: contrasts, observations, observers, agents, goals, preferences, bandwidth, choices, narratives, capture,
+their choices: contrasts, observations, observers, agents, goals, preferences, attention, choices, narratives,
 sigils, and scale. The point isn’t to be complete, but to stop re-inventing words for the same structures.
 
 **[Frames](5-frames.md)**  
