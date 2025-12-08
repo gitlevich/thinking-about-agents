@@ -19,12 +19,19 @@ In AL:
 A **contrast** is an axis in the agent’s contrast space, with an ordered range of possible observations at this scale;
 what matters is that the agent can distinguish positions along it at its current resolution.
 
+From a distance this sounds like the usual “high-dimensional space” language, but the emphasis is different. Saying “a
+1024-dimensional embedding space” tells me almost nothing about what actually matters. Saying “1024 contrasts” forces me
+to imagine 1024 specific ways this agent can tell “more” from “less,” “this” from “that,” at this scale, and to explain
+why each of them is worth spending attention on. In AL, a dimension only earns its keep if it is a live contrast for
+the agent.
+
 An **observation** is the current value of a contrast for the observer. If there is no possible difference along a
 contrast, there is nothing to observe.
 
-**Scale** is about which differences and choices are visible as “one step.” At a coarse scale, “move to San Francisco”
-is one choice; at a finer scale it contains many smaller choices. Two agents are at the same scale when they can directly
-entangle.
+**Scale** is the size of change that currently counts as “one move” in my narrative. At one scale, “move to San Francisco”
+is a single choice; at a finer scale it unfolds into many choices (find an apartment, sign a lease, pack boxes). At a
+coarser scale, the same thing might be just one step in “change my life.” Two agents are at the same scale when the
+moves they can make toward each other feel like comparable steps and can directly entangle.
 
 A **frame** is all my current observations along the contrasts I am currently attending to, at my current scale and
 spatial/temporal resolution.
@@ -32,8 +39,8 @@ spatial/temporal resolution.
 **Attention** is the finite resource that lets an agent resolve contrasts and generate or regulate narratives. Finer
 resolution or more simultaneous contrasts spend more attention.
 
-**Resolution** is how finely a given contrast is sliced in this frame; higher resolution means more distinguishable
-positions along the same axis and more attention spent.
+**Resolution** is how finely a given contrast is sliced *within a chosen scale*; higher resolution means more
+distinguishable positions along the same axis and more attention spent.
 
 An **observer** is where observations register. It lives in the stream of observations as they update along the
 contrasts it can resolve.
