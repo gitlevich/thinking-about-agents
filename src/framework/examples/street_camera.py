@@ -47,11 +47,11 @@ class StreetHunter(Sigil):
         super().__init__("street_hunter", "make compelling street images", weight=1.0)
 
     def score(self, frame: Frame, choice: Choice) -> float:
-        if choice.label == "walk_on":
+        if choice.label == WALK_ON.label:
             base = -1.0
-        elif choice.label == "shoot":
+        elif choice.label == SHOOT:
             base = 1.0
-        elif choice.label == "cross_street":
+        elif choice.label == CROSS_STREET.label:
             base = 0.0
         else:
             base = 0.0
@@ -62,17 +62,17 @@ class StreetHunter(Sigil):
 
         score = base
 
-        if choice.label == "shoot":
+        if choice.label == SHOOT:
             score += 0.4 * s
             score += 0.2 * l
             score += 0.3 * hunger
 
-        if choice.label == "walk_on":
+        if choice.label == WALK_ON.label:
             # walking past a strong scene is painful for this sigil
             score -= 0.3 * s
             score -= 0.2 * hunger
 
-        if choice.label == "cross_street":
+        if choice.label == CROSS_STREET.label:
             # neutral, slightly positive if subject is interesting
             score += 0.1 * s
 
