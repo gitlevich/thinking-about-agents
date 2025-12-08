@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import List
 
-from framework.al import (
+from src.framework.al import (
     Contrast,
     Resolution,
     Frame,
@@ -12,7 +12,7 @@ from framework.al import (
     Agent,
     History,
 )
-from framework.examples.time_block_llm import make_exec_agent
+
 
 # Contrasts for "this block of time"
 energy = Contrast("energy", "current energy 1–10", Resolution.COARSE, is_self=True)
@@ -113,4 +113,3 @@ if __name__ == "__main__":
 
     run(adult, "Adult mode")
     run(child, "Artist mode")
-    run(make_exec_agent(), "Executive mode")
